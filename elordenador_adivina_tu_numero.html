@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title> Adivinanúmeros... </title>
+</head>
+<body bgcolor="blue">
+	El ordenador adivinará tu número
+</body>
+
+
+	<script>
+let x=0
+let y=100
+alert("Piensa un número (1,100) para que el ordenador adivine");
+let final = false;
+
+while (!final){
+	intento = random.randint(x,y);
+	let respuesta = confirm("¿Es el número ", +intento, ", correcto?");
+	if (respuesta == true){
+		alert("Se ha adivinado tu número (", +intento ,").")
+		final == true;
+		}
+	else {
+		let respuesta_2 = confirm("¿Es el número ", +intento, "mayor que ", +n, "?")
+		if (respuesta_2 == false){
+			let y = round((x+y)/2)}
+		else {
+			let x = round((x+y)/2)}
+		
+	}
+
+
+}
+
+
+
+
+	</script>
+</body>
+</html>

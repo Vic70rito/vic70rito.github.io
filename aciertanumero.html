@@ -1,0 +1,32 @@
+
+<html>
+<head>
+	<title> Prueba_1 </title>
+</head>
+<body bgcolor="blue">
+	Acierta un número
+</body>
+
+
+	<script>
+
+let correcto = 12;
+let final = false;
+while (!final){
+	let respuesta = prompt("introduce un número para adivinar");
+
+	if (respuesta<correcto) {
+		alert("El numero correcto es mayor")
+	} else if (respuesta>correcto) {
+		alert("El número correcto es menor");
+	} else {
+		alert("Has adivinado, la respuesta es: " + correcto);
+		final = true;
+	}
+}
+
+
+
+	</script>
+</body>
+</html>
