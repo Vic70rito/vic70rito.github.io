@@ -1,0 +1,98 @@
+<html>
+<head>
+<tittle>TRES EN RAYA</title>
+<br>
+<style>
+
+.boton {
+	background-color: #DCE6F1;
+	height: 200px;
+	width: 200px;
+	border-width: 0px;
+	font-size: 12 px;
+	margin: 3px
+}
+
+.jugador1 {
+	background-color: #33FFCC;
+	height: 199.5px;
+	width: 199.5px;
+	border-width: 0px;
+	font-size: 25px;
+	margin: 3px
+}
+
+.jugador2 {
+	background-color: #3395FF;
+	height: 199.5px;
+	width: 199.5px;
+	border-width: 0px;
+	font-size: 25px;
+	margin: 3px
+
+}
+
+
+</style>
+</head>
+<body>
+
+
+<button id="0" onclick="pulsa(0)" class="boton">0</button>
+<button id="1" onclick="pulsa(1)" class="boton">1</button>
+<button id="2" onclick="pulsa(2)" class="boton">2</button>
+<br>
+<button id="3" onclick="pulsa(3)" class="boton">3</button>
+<button id="4" onclick="pulsa(4)" class="boton">4</button>
+<button id="5" onclick="pulsa(5)" class="boton">5</button>
+<br>
+<button id="6" onclick="pulsa(6)" class="boton">6</button>
+<button id="7" onclick="pulsa(7)" class="boton">7</button>
+<button id="8" onclick="pulsa(8)" class="boton">8</button>
+
+
+
+<script>
+let turno = 0;
+let tablero1=[];
+let tablero2=[];
+
+
+function pulsa(id) {
+	if (tablero1.includes(id) || tablero2.includes(id)){
+		return
+	}
+	else{
+	  if (turno%2==0){
+	  document.getElementById(id.toString()).classList.add('jugador1');
+	  document.getElementById(id.toString()).textContent = "O";
+	  tablero1.push(id);
+	  turno++;
+	  }
+	  else {
+	  document.getElementById(id.toString()).classList.add('jugador2');
+	  document.getElementById(id.toString()).textContent = "X";
+	  tablero2.push(id);
+	  turno++;
+	  }
+	}
+	buscaganador();
+}
+
+
+function buscaganador(){
+	let lineas = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+	for (x=0;x<lineas.length;x++){
+		if (tablero1.includes(lineas[x][0]) && tablero1.includes(lineas[x][1]) && tablero1.includes(lineas[x][2])){
+			alert('El jugador verde ha ganado')
+		}
+		if (tablero2.includes(lineas[x][0]) && tablero2.includes(lineas[x][1]) && tablero2.includes(lineas[x][2])){
+			alert('El jugador azul ha ganado')
+		}
+	}
+}
+
+</script>
+
+</body>
+</html>
